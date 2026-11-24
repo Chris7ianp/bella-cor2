@@ -1,0 +1,298 @@
+<div class="site-shell bg-bella-sand text-bella-ink">
+  <div class="top-note flex items-center justify-center gap-3">
+    <span>BELEZA QUE REALÇA A SUA ESSÊNCIA</span>
+    <span class="top-note__dot" aria-hidden="true"></span>
+    <span>BRONZE &amp; ESTÉTICA</span>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner page-width mx-auto flex items-center justify-between">
+      <a class="brand" href="#inicio" aria-label="Bella Cor — início" (click)="closeMenu()">
+        <img src="assets/images/bella-cor-logo.svg" alt="Bella Cor — Bronze e Estética" class="brand__logo">
+      </a>
+
+      <nav class="desktop-nav flex items-center gap-6" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">A Bella Cor</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Inspirações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a class="header-cta inline-flex items-center justify-center gap-3" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer">
+        <span>Agendar horário</span>
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        [attr.aria-expanded]="mobileMenuOpen()"
+        [attr.aria-label]="mobileMenuOpen() ? 'Fechar menu' : 'Abrir menu'"
+        (click)="toggleMenu()">
+        @if (mobileMenuOpen()) {
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+        } @else {
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        }
+      </button>
+    </div>
+
+    @if (mobileMenuOpen()) {
+      <nav class="mobile-nav flex flex-col" aria-label="Navegação mobile">
+        <a href="#inicio" (click)="closeMenu()">Início</a>
+        <a href="#sobre" (click)="closeMenu()">A Bella Cor</a>
+        <a href="#servicos" (click)="closeMenu()">Serviços</a>
+        <a href="#galeria" (click)="closeMenu()">Inspirações</a>
+        <a href="#contato" (click)="closeMenu()">Contato</a>
+        <a class="mobile-nav__cta" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer" (click)="closeMenu()">Agendar horário</a>
+      </nav>
+    }
+  </header>
+
+  <main>
+    <section class="hero-section" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="page-width hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span> UM CONVITE AO SEU MELHOR</div>
+          <h1>O seu brilho tem<br>um <em>lugar especial.</em></h1>
+          <p class="hero-lead">Um espaço para se cuidar, renovar a autoestima e celebrar a beleza que já existe em você.</p>
+          <div class="hero-actions flex flex-wrap items-center gap-6">
+            <a class="button button--primary" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer">
+              Agende sua experiência
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg>
+            </a>
+            <a class="text-link" href="#servicos">Conheça nossos cuidados <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-signature flex items-center gap-3">
+            <span class="signature-mark" aria-hidden="true">
+              <svg viewBox="0 0 42 42"><path d="M21 36c-1-7-8-11-14-10 2 7 7 10 14 10Zm0 0c1-7 8-11 14-10-2 7-7 10-14 10Zm0 0V16m0 9c-7-2-10-8-9-14 6 2 9 6 9 14Zm0 0c7-2 10-8 9-14-6 2-9 6-9 14Z" /></svg>
+            </span>
+            <span>Beleza com cuidado.<br><strong>Leveza em cada detalhe.</strong></span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img
+              class="hero-image"
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=88"
+              alt="Retrato feminino em luz natural, com beleza leve e elegante"
+              fetchpriority="high">
+          </div>
+          <div class="hero-image-caption">
+            <span class="caption-kicker">BELLA COR</span>
+            <span class="caption-title">Seu momento.<br>Sua beleza.</span>
+            <span class="caption-rule"></span>
+          </div>
+          <div class="hero-stamp" aria-label="Bronze e estética com cuidado">
+            <span class="hero-stamp__top">CUIDADO</span>
+            <span class="hero-stamp__center">♡</span>
+            <span class="hero-stamp__bottom">QUE ACOLHE</span>
+          </div>
+          <span class="hero-vertical-note">BEAUTY • SELF CARE • CONFIDENCE</span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#sobre" aria-label="Role para conhecer a Bella Cor">
+        <span>DESCUBRA</span><span class="scroll-cue__line"></span>
+      </a>
+    </section>
+
+    <section class="values-strip" aria-label="Nossa essência">
+      <div class="page-width values-grid">
+        <div><span class="value-index">01</span><span>Cuidado individual</span></div>
+        <span class="values-divider" aria-hidden="true"></span>
+        <div><span class="value-index">02</span><span>Beleza sem excessos</span></div>
+        <span class="values-divider" aria-hidden="true"></span>
+        <div><span class="value-index">03</span><span>Experiência acolhedora</span></div>
+      </div>
+    </section>
+
+    <section class="about-section section-pad" id="sobre">
+      <div class="page-width about-grid">
+        <div class="about-visual">
+          <div class="about-photo-main">
+            <img
+              src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1100&q=88"
+              alt="Ambiente de spa com luz suave e atmosfera tranquila"
+              loading="lazy">
+          </div>
+          <div class="about-photo-small">
+            <img
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=700&q=85"
+              alt="Detalhes de uma rotina de beleza e autocuidado"
+              loading="lazy">
+          </div>
+          <div class="about-seal">
+            <span>UM TEMPO</span>
+            <span class="about-seal__heart">para você</span>
+            <span>SÓ SEU</span>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span> UM POUCO SOBRE NÓS</div>
+          <h2>Mais do que estética.<br><em>Um momento seu.</em></h2>
+          <p class="about-intro">Acreditamos que se cuidar é uma forma bonita de se escolher todos os dias.</p>
+          <p class="body-copy">A Bella Cor nasceu para oferecer uma experiência de beleza leve, acolhedora e atenta aos detalhes. Cada pessoa chega com sua própria história, seus desejos e sua forma única de se sentir bem — e é assim que gostamos de cuidar.</p>
+          <p class="body-copy">Aqui, o atendimento começa pela escuta. Nosso propósito é valorizar sua essência, respeitar sua individualidade e fazer do seu tempo com a gente um momento especial.</p>
+          <a class="underlined-link" href="#servicos">Descubra nossos serviços <span aria-hidden="true">→</span></a>
+          <div class="about-signoff">Com carinho, <span>Bella Cor</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section section-pad" id="servicos">
+      <div class="page-width">
+        <div class="section-heading section-heading--center">
+          <div class="eyebrow eyebrow--center"><span class="eyebrow__line"></span> CUIDADOS BELLA COR <span class="eyebrow__line"></span></div>
+          <h2>Um cuidado para cada<br><em>versão de você.</em></h2>
+          <p>Escolha o que faz sentido para o seu momento. O restante começa com uma boa conversa.</p>
+        </div>
+
+        <div class="service-cards grid grid-cols-1 gap-4 md:grid-cols-3">
+          @for (service of services; track service.number) {
+            <article class="service-card">
+              <div class="service-card__top">
+                <span class="service-number">{{ service.number }}</span>
+                <span class="service-icon" aria-hidden="true">
+                  @if (service.icon === 'sun') {
+                    <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="8"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7M9.9 9.9l5 5m18.2 18.2 5 5m0-28.2-5 5M14.9 33.1l-5 5" /></svg>
+                  } @else if (service.icon === 'face') {
+                    <svg viewBox="0 0 48 48"><path d="M24 5c-9 0-15 7-15 17 0 11 7 20 15 20s15-9 15-20C39 12 33 5 24 5Z"/><path d="M18 22h.1M30 22h.1M19 30c3 3 7 3 10 0" /></svg>
+                  } @else {
+                    <svg viewBox="0 0 48 48"><path d="M19 5c-2 5-2 9 1 12 2 2 2 4-1 6-5 3-8 8-8 14 0 4 3 6 7 6h12c4 0 7-2 7-6 0-6-3-11-8-14-3-2-3-4-1-6 3-3 3-7 1-12"/><path d="M17 27c4 2 10 2 14 0" /></svg>
+                  }
+                </span>
+              </div>
+              <h3>{{ service.title }}</h3>
+              <p>{{ service.description }}</p>
+              <div class="service-card__bottom">
+                <span>{{ service.note }}</span>
+                <a [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Consultar ' + service.title">↗</a>
+              </div>
+            </article>
+          }
+        </div>
+        <p class="services-footnote">Os atendimentos e protocolos são definidos após conversa e avaliação individual.</p>
+      </div>
+    </section>
+
+    <section class="experience-section section-pad">
+      <div class="page-width experience-grid">
+        <div class="experience-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span> A EXPERIÊNCIA</div>
+          <h2>Seu tempo de cuidado<br><em>começa aqui.</em></h2>
+          <p>Queremos que cada visita seja tranquila, especial e feita para você. Por isso, cuidamos de cada etapa com atenção.</p>
+          <a class="button button--outline" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer">Vamos conversar <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="experience-steps">
+          <article class="step-item">
+            <span class="step-number">01</span>
+            <div><h3>Você conta o que deseja</h3><p>Entendemos suas expectativas e o que faz sentido para o seu momento.</p></div>
+          </article>
+          <article class="step-item">
+            <span class="step-number">02</span>
+            <div><h3>Planejamos seu cuidado</h3><p>Conversamos sobre possibilidades e orientamos a melhor experiência para você.</p></div>
+          </article>
+          <article class="step-item">
+            <span class="step-number">03</span>
+            <div><h3>Você aproveita o momento</h3><p>Um atendimento com atenção, acolhimento e respeito à sua individualidade.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section section-pad" id="galeria">
+      <div class="page-width">
+        <div class="gallery-heading flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <div class="eyebrow"><span class="eyebrow__line"></span> INSPIRAÇÃO BELLA COR</div>
+            <h2>Beleza nos <em>detalhes.</em></h2>
+          </div>
+          <p>Uma seleção de referências que traduzem a atmosfera que queremos compartilhar: natural, delicada e cheia de personalidade.</p>
+        </div>
+        <div class="gallery-grid grid grid-cols-2 gap-3 md:grid-cols-3">
+          <figure class="gallery-tile gallery-tile--large">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=88" alt="Retrato de beleza com luz natural" loading="lazy">
+            <figcaption>Naturalidade em primeiro lugar</figcaption>
+          </figure>
+          <figure class="gallery-tile gallery-tile--middle">
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=850&q=88" alt="Detalhe de maquiagem e cuidado facial" loading="lazy">
+            <figcaption>O prazer de se cuidar</figcaption>
+          </figure>
+          <figure class="gallery-tile gallery-tile--small">
+            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=850&q=88" alt="Ambiente de bem-estar em tons naturais" loading="lazy">
+            <figcaption>Um espaço para respirar</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-disclaimer">Imagens ilustrativas. A galeria pode ser substituída por fotos autorais da Bella Cor.</p>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="page-width quote-inner">
+        <span class="quote-mark" aria-hidden="true">“</span>
+        <p>Que o cuidado com você<br>seja sempre um <em>bom encontro.</em></p>
+        <span class="quote-signature">Bella Cor</span>
+      </div>
+    </section>
+
+    <section class="booking-section section-pad" id="agendamento">
+      <div class="page-width booking-grid">
+        <div class="booking-copy">
+          <div class="eyebrow"><span class="eyebrow__line"></span> SEU HORÁRIO, DO SEU JEITO</div>
+          <h2>Seu próximo momento<br>de cuidado está <em>perto.</em></h2>
+          <p>Para facilitar sua experiência, a Bella Cor já conta com um portal exclusivo de agendamento. Acesse para consultar e marcar seu horário.</p>
+          <div class="booking-details">
+            <span class="booking-details__icon" aria-hidden="true">✳</span>
+            <span>Agendamento online<br><strong>Escolha o melhor momento para você.</strong></span>
+          </div>
+        </div>
+
+        <div class="booking-form booking-portal-card">
+          <div class="form-heading"><span>BELLA COR / AGENDA</span><h3>Vamos reservar seu momento?</h3></div>
+          <p class="portal-description">O agendamento é realizado diretamente no nosso portal. Clique no botão abaixo para acessar a área das clientes.</p>
+          <a class="button button--primary booking-submit portal-button" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer">
+            Acessar portal de agendamento
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M10 5l5 5-5 5" /></svg>
+          </a>
+          <p class="portal-security-note">Você será direcionada para o ambiente de agendamento da Bella Cor.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contato">
+      <div class="page-width contact-band__inner">
+        <div>
+          <span class="contact-kicker">BELLA COR · BRONZE E ESTÉTICA</span>
+          <h2>Vai ser um prazer<br><em>receber você.</em></h2>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-action" [href]="bookingPortalUrl" target="_blank" rel="noopener noreferrer">Agendar horário <span>↗</span></a>
+          @if (whatsappNumber) {
+            <a class="contact-action" [href]="'https://wa.me/' + whatsappNumber" target="_blank" rel="noopener noreferrer">WhatsApp <span>↗</span></a>
+          }
+          @if (instagramUrl) {
+            <a class="contact-action" [href]="instagramUrl" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a>
+          }
+          @if (address) {
+            <p class="contact-address">{{ address }}</p>
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-width footer-inner">
+      <a class="footer-brand" href="#inicio" aria-label="Voltar ao início">
+        <img src="assets/images/bella-cor-logo.svg" alt="Bella Cor — Bronze e Estética" loading="lazy">
+      </a>
+      <p>Beleza com cuidado, do seu jeito.</p>
+      <span class="footer-copy">© {{ currentYear }} Bella Cor. Todos os direitos reservados.</span>
+      <a class="back-top" href="#inicio" aria-label="Voltar ao topo">↑</a>
+    </div>
+  </footer>
+</div>
