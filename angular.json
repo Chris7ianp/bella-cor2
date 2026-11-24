@@ -23,6 +23,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/bella-cor2/",
               "budgets": [
                 {
                   "type": "initial",
